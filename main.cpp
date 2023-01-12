@@ -9,12 +9,11 @@
 #include "data_structures/String.h"
 #include "data_structures/StringView.h"
 #include "data_structures/RefPointer.h"
-
-// TODO: Work around Json.h and Json.cpp.
-
 #include "data_structures/Vector.h"
 
+
 int main() {
+  /*
   Json::JsonObject obj,nested;
   Json::Array array;
 
@@ -35,29 +34,10 @@ int main() {
 
   obj.show();
   printf("\n\n");
+  */
 
-/*
-  nested.set("skill_1", "JavaScript");
-  nested.set("skill_2", "Cpp");
-
-  obj.set("username", "abdelfetah-dev");
-  obj.set("age", Json::Number(19));
-
-  for(uint i = 0; i < 8; i++){
-    array.append(Json::Number(i));
-  }
-
-  array.append(nested);
-  array.append(String("abdelfetah"));
-
-  for(uint i = 0; i < 8; i++){
-    array.append(Json::Number(i));
-  }
-  
-  obj.set("skills", array);
-
-
-  obj.show();
-*/
+  Json::Parser m_parser("{ \"user\" : [\"abdelfetah\", \"Lachenani\"], \"age\": {\"18\": 18 }, \"test\":1235 }");
+  m_parser.parse();
+  printf("\n\nDone!\n\n");
   return 0;
 }

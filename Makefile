@@ -153,6 +153,30 @@ data_structures/ByteBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsonCpp.dir/build.make CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.s
 .PHONY : data_structures/ByteBuffer.cpp.s
 
+data_structures/GenericParser.o: data_structures/GenericParser.cpp.o
+.PHONY : data_structures/GenericParser.o
+
+# target to build an object file
+data_structures/GenericParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsonCpp.dir/build.make CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o
+.PHONY : data_structures/GenericParser.cpp.o
+
+data_structures/GenericParser.i: data_structures/GenericParser.cpp.i
+.PHONY : data_structures/GenericParser.i
+
+# target to preprocess a source file
+data_structures/GenericParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsonCpp.dir/build.make CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.i
+.PHONY : data_structures/GenericParser.cpp.i
+
+data_structures/GenericParser.s: data_structures/GenericParser.cpp.s
+.PHONY : data_structures/GenericParser.s
+
+# target to generate assembly for a file
+data_structures/GenericParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/JsonCpp.dir/build.make CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.s
+.PHONY : data_structures/GenericParser.cpp.s
+
 data_structures/Json.o: data_structures/Json.cpp.o
 .PHONY : data_structures/Json.o
 
@@ -261,6 +285,9 @@ help:
 	@echo "... data_structures/ByteBuffer.o"
 	@echo "... data_structures/ByteBuffer.i"
 	@echo "... data_structures/ByteBuffer.s"
+	@echo "... data_structures/GenericParser.o"
+	@echo "... data_structures/GenericParser.i"
+	@echo "... data_structures/GenericParser.s"
 	@echo "... data_structures/Json.o"
 	@echo "... data_structures/Json.i"
 	@echo "... data_structures/Json.s"

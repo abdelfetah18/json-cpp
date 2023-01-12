@@ -83,10 +83,24 @@ CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/ByteBuffer.cpp -o CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.s
 
+CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o: CMakeFiles/JsonCpp.dir/flags.make
+CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o: data_structures/GenericParser.cpp
+CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o: CMakeFiles/JsonCpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o -MF CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o.d -o CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o -c /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/GenericParser.cpp
+
+CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/GenericParser.cpp > CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.i
+
+CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/GenericParser.cpp -o CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.s
+
 CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o: CMakeFiles/JsonCpp.dir/flags.make
 CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o: data_structures/Json.cpp
 CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o: CMakeFiles/JsonCpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o -MF CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o.d -o CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o -c /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/Json.cpp
 
 CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.s: cmake_force
 CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o: CMakeFiles/JsonCpp.dir/flags.make
 CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o: data_structures/String.cpp
 CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o: CMakeFiles/JsonCpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o -MF CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o.d -o CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o -c /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/String.cpp
 
 CMakeFiles/JsonCpp.dir/data_structures/String.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/JsonCpp.dir/data_structures/String.cpp.s: cmake_force
 CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o: CMakeFiles/JsonCpp.dir/flags.make
 CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o: data_structures/StringView.cpp
 CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o: CMakeFiles/JsonCpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o -MF CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o.d -o CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o -c /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/StringView.cpp
 
 CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.s: cmake_force
 CMakeFiles/JsonCpp.dir/main.cpp.o: CMakeFiles/JsonCpp.dir/flags.make
 CMakeFiles/JsonCpp.dir/main.cpp.o: main.cpp
 CMakeFiles/JsonCpp.dir/main.cpp.o: CMakeFiles/JsonCpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/JsonCpp.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/JsonCpp.dir/main.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/JsonCpp.dir/main.cpp.o -MF CMakeFiles/JsonCpp.dir/main.cpp.o.d -o CMakeFiles/JsonCpp.dir/main.cpp.o -c /home/abdelfetah-dev/Desktop/JsonCpp/main.cpp
 
 CMakeFiles/JsonCpp.dir/main.cpp.i: cmake_force
@@ -142,6 +156,7 @@ CMakeFiles/JsonCpp.dir/main.cpp.s: cmake_force
 # Object files for target JsonCpp
 JsonCpp_OBJECTS = \
 "CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.o" \
+"CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o" \
 "CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o" \
 "CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o" \
 "CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o" \
@@ -151,13 +166,14 @@ JsonCpp_OBJECTS = \
 JsonCpp_EXTERNAL_OBJECTS =
 
 JsonCpp: CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.o
+JsonCpp: CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o
 JsonCpp: CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o
 JsonCpp: CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o
 JsonCpp: CMakeFiles/JsonCpp.dir/data_structures/StringView.cpp.o
 JsonCpp: CMakeFiles/JsonCpp.dir/main.cpp.o
 JsonCpp: CMakeFiles/JsonCpp.dir/build.make
 JsonCpp: CMakeFiles/JsonCpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable JsonCpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable JsonCpp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/JsonCpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

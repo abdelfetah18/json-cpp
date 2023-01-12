@@ -30,6 +30,11 @@ CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.o: data_structures/ByteBuf
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h
 
+CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o: data_structures/GenericParser.cpp \
+  /usr/include/stdc-predef.h \
+  data_structures/GenericParser.h \
+  data_structures/StringView.h
+
 CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o: data_structures/Json.cpp \
   /usr/include/stdc-predef.h \
   data_structures/Json.h \
@@ -64,7 +69,8 @@ CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o: data_structures/Json.cpp \
   data_structures/String.h \
   data_structures/StringView.h \
   data_structures/RefPointer.h \
-  data_structures/Vector.h
+  data_structures/Vector.h \
+  data_structures/GenericParser.h
 
 CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o: data_structures/String.cpp \
   /usr/include/stdc-predef.h \
@@ -172,6 +178,7 @@ CMakeFiles/JsonCpp.dir/main.cpp.o: main.cpp \
   data_structures/StringView.h \
   data_structures/RefPointer.h \
   data_structures/Vector.h \
+  data_structures/GenericParser.h \
   data_structures/LinkedList.h \
   data_structures/String.h \
   data_structures/StringView.h \
@@ -192,6 +199,8 @@ CMakeFiles/JsonCpp.dir/main.cpp.o: main.cpp \
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
@@ -221,13 +230,13 @@ CMakeFiles/JsonCpp.dir/main.cpp.o: main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
 
 /usr/include/features.h:
 
 data_structures/Json.h:
+
+data_structures/GenericParser.cpp:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
@@ -277,11 +286,19 @@ data_structures/StringView.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+data_structures/GenericParser.h:
+
+data_structures/HashTable.h:
+
 /usr/include/alloca.h:
 
 data_structures/Json.cpp:
-
-data_structures/HashTable.h:
 
 data_structures/LinkedList.h:
 
@@ -322,9 +339,3 @@ data_structures/String.h:
 /usr/include/c++/12/bits/std_abs.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:

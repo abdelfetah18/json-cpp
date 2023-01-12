@@ -36,6 +36,18 @@ public:
         return true;
     }
 
+    bool operator ==(String other){
+        char* str_1 = other.get();
+        for(uint i=0; i < size; i++){
+            if(str[i] != str_1[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    int parseInt();
+
     // TODO: implement a grabage collector algorithm for the String Class.
     void operator delete(void* ptr){ delete[] ((String*) ptr)->str; }
 private:

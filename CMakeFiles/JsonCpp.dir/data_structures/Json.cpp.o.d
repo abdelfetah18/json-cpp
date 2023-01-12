@@ -32,4 +32,5 @@ CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o: \
  /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/String.h \
  /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/StringView.h \
  /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/RefPointer.h \
- /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/Vector.h
+ /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/Vector.h \
+ /home/abdelfetah-dev/Desktop/JsonCpp/data_structures/GenericParser.h

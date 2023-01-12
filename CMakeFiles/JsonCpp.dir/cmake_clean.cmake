@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.o"
   "CMakeFiles/JsonCpp.dir/data_structures/ByteBuffer.cpp.o.d"
+  "CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o"
+  "CMakeFiles/JsonCpp.dir/data_structures/GenericParser.cpp.o.d"
   "CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o"
   "CMakeFiles/JsonCpp.dir/data_structures/Json.cpp.o.d"
   "CMakeFiles/JsonCpp.dir/data_structures/String.cpp.o"

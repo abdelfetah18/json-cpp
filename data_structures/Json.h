@@ -8,16 +8,17 @@
 #include "StringView.h"
 #include "RefPointer.h"
 #include "Vector.h"
+#include "GenericParser.h"
 
 namespace Json {
     
 class Number {
     public:
     Number();
-    Number(uint num):value(num){ }
-    uint value;
+    Number(int num):value(num){ }
+    int value;
     void show(){
-        printf("%u", value);
+        printf("%d", value);
     }
 };
 
@@ -50,6 +51,7 @@ public:
         Array* array;
         JsonObject* object;
         bool boolean;
+        void* null = nullptr;
     };
     JsonV m_value;
     String m_type;
@@ -73,11 +75,45 @@ public:
     void set(String,Number);
     void set(String,Array);
     void set(String,JsonObject);
+    void set(String,JsonValue);
 
     void show();
 private:
     HashTable<String,JsonValue> objects;
 
+};
+
+
+// TODO: add a support for unicode strings.
+class Parser {
+public:
+    Parser(StringView);
+    ~Parser();
+    
+    
+    uint increment();
+    char getCur();
+    char lookAhead();
+    void skipWhiteSpace();
+
+    uint parse();
+    uint parseObject(JsonObject&);
+    uint parseValue(JsonValue&);
+    uint parseString(String&);
+    uint parseEscape(String&);
+    uint parseNumber(Number&);
+    uint parseArray(Array&);
+    uint parseBoolean(bool&);
+    uint parseNull(JsonValue&);
+    
+    JsonObject getRootObject(){
+        return m_object;
+    }
+
+private:
+    StringView m_input;
+    uint pos = 0;
+    JsonObject m_object;
 };
 
 };
