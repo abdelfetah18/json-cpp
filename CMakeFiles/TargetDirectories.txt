@@ -1,3 +1,0 @@
-/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles/JsonCpp.dir
-/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles/edit_cache.dir
-/home/abdelfetah-dev/Desktop/JsonCpp/CMakeFiles/rebuild_cache.dir
