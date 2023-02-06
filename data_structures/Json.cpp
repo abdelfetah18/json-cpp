@@ -193,11 +193,11 @@ void Parser::skipWhiteSpace(){
     }
 }
 
-uint Parser::parseObject(JsonObject& obj){
+JsonErr Parser::parseObject(JsonObject& obj){
     // FIXME: handle Errors.
     if(getCur() == '{'){
         increment();
-        while(getCur() != '}'){
+        while(!is_eof() && getCur() != '}'){
             String* key = new String;
             skipWhiteSpace();
             parseString(*key);
@@ -215,50 +215,54 @@ uint Parser::parseObject(JsonObject& obj){
                 }else{
                     if(getCur() != '}'){
                         printf("Error at: %c\n", getCur());
-                        return 1;
+                        return JsonErr::EXPECTED_COMMA_OR_END_BRACKET;
                     }
                 }
             }else{
                 printf("Error at: %c Expected ':' !\n", getCur());
-                return 1; // Expected ':'
+                return JsonErr::EXPECTED_COLON; // Expected ':'
             }
         }
         increment();
-        return 0;
+        return JsonErr::VALID_JSON_DATA;
     }
 }
 
-uint Parser::parseString(String& str){
-    if(getCur() == '"'){
+JsonErr Parser::parseString(String& str){
+    if(!is_eof() && getCur() == '"'){
         increment();
-        while(getCur() != '"'){
+        while(!is_eof() && getCur() != '"'){
             if(getCur() == '\\'){
                 parseEscape(str);
             }
             str.push(getCur());
             increment();
         }
-        increment();
+        if(is_eof() || getCur() != '"')
+            return JsonErr::EXPECTED_DOUBLE_QUATS;
+        return JsonErr::VALID_STRING;
+    }else{
+        return JsonErr::EXPECTED_DOUBLE_QUATS;
     }
 }
 
-uint Parser::parseEscape(String& str){
+JsonErr Parser::parseEscape(String& str){
     // TODO: parse Escaped Values.
 }
 
-uint Parser::parseValue(JsonValue& value){
+JsonErr Parser::parseValue(JsonValue& value){
     switch (getCur())
     {
     case '"':
         value.m_value.str = new String;
         value.m_type.set("string");
-        parseString(*value.m_value.str);
+        return parseString(*value.m_value.str);
         break;
     
     case 't':
     case 'f':
         value.m_type.set("boolean");
-        parseBoolean(value.m_value.boolean);
+        return parseBoolean(value.m_value.boolean);
         break;
     case '0':
     case '1':
@@ -273,85 +277,88 @@ uint Parser::parseValue(JsonValue& value){
     case '-':
         value.m_type.set("number");
         value.m_value.number = new Number;
-        parseNumber(*value.m_value.number);
+        return parseNumber(*value.m_value.number);
         break;
     case 'n':
         value.m_type.set("null");
-        parseNull(value);
+        return parseNull(value);
         break;
     case '[':
         value.m_value.array = new Array;
         value.m_type.set("array");
-        parseArray(*value.m_value.array);
+        return parseArray(*value.m_value.array);
         break;
     case '{':
         value.m_value.object = new JsonObject;
         value.m_type.set("object");
-        parseObject(*value.m_value.object);
+        return parseObject(*value.m_value.object);
         break;
     default:
         break;
     }
+    return JsonErr::INVALID_CHARCATER;
 }
 
-uint Parser::parseBoolean(bool& v){
+JsonErr Parser::parseBoolean(bool& v){
     if(getCur() == 't'){
         char* true_str = "true";
         for(uint i = 0; i < 4; i++){
             if(getCur() != true_str[i]){
-                return 1;
+                return JsonErr::INVALID_KEYWORD;
             }
             increment();
         }
         v = true;
-        return 0;
+        return JsonErr::VALID_BOOLEAN;
     }
     if(getCur() == 'f'){
         char* false_str = "false";
         for(uint i = 0; i < 5; i++){
             if(getCur() != false_str[i]){
-                return 1;
+                return JsonErr::INVALID_KEYWORD;
             }
             increment();
         }
         v = false;
-        return 0;
+        return JsonErr::VALID_BOOLEAN;
     }
+    return JsonErr::INVALID_KEYWORD;
 }
 
-uint Parser::parseNull(JsonValue& v){
+JsonErr Parser::parseNull(JsonValue& v){
     if(getCur() == 'n'){
         char* null_str = "null";
         for(uint i = 0; i < 4; i++){
             if(getCur() != null_str[i]){
-                return 1;
+                return JsonErr::INVALID_KEYWORD;
             }
             increment();
         }
         v.m_value.null = nullptr;
-        return 0;
+        return JsonErr::VALID_NULL;
     }
+    return JsonErr::INVALID_KEYWORD;
 }
 
-uint Parser::parseNumber(Number& num){
+JsonErr Parser::parseNumber(Number& num){
     // TODO: parse a number. Json Spec: integer fraction exponent
     String str_num;
     if(getCur() == '-'){
         str_num.push('-');
         increment();
     }
-    while(getCur() >= '0' && getCur() <= '9'){
+    while(!is_eof() && getCur() >= '0' && getCur() <= '9'){
         str_num.push(getCur());
         increment();
     }
     num.value = str_num.parseInt();
-    return 0;
+    return JsonErr::VALID_NUMBER;
 }
 
-uint Parser::parseArray(Array& arr){
+JsonErr Parser::parseArray(Array& arr){
     if(getCur() == '['){
         increment();
-        while(getCur() != ']'){
+        while(!is_eof() && getCur() != ']'){
             skipWhiteSpace();
             JsonValue val;
             parseValue(val);
@@ -362,13 +369,29 @@ uint Parser::parseArray(Array& arr){
                 continue;
             }
         }
+        if(is_eof() || getCur() != ']'){
+            return JsonErr::EXPECTED_END_SQUARE_BRACKET;
+        }
         increment();
+        return JsonErr::VALID_ARRAY;
+    }else{
+        return JsonErr::EXPECTED_START_SQUARE_BRACKET;
     }
 }
 
-uint Parser::parse(){
-    if(getCur() == '{'){
+JsonErr Parser::parse(){
+    if(!is_eof() && getCur() == '{'){
         parseObject(m_object);
+        m_object.show();
+    }else{
+        return JsonErr::EXPECTED_START_BRACKET;
     }
-    m_object.show();
+}
+
+bool Parser::is_eof(){
+    return pos >= m_input.length(); 
+}
+
+char* Json::ErrorMsg(JsonErr err){
+    return "empty";
 }

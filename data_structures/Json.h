@@ -11,7 +11,26 @@
 #include "GenericParser.h"
 
 namespace Json {
-    
+
+enum JsonErr {
+    EXPECTED_START_BRACKET,
+    EXPECTED_COMMA_OR_END_BRACKET,
+    EXPECTED_START_SQUARE_BRACKET,
+    EXPECTED_END_SQUARE_BRACKET,
+    EXPECTED_COLON,
+    EXPECTED_DOUBLE_QUATS,
+    INVALID_CHARCATER,
+    INVALID_KEYWORD,
+    VALID_ARRAY,
+    VALID_NULL,
+    VALID_NUMBER,
+    VALID_BOOLEAN,
+    VALID_STRING,
+    VALID_JSON_DATA
+};
+
+char* ErrorMsg(JsonErr err);
+
 class Number {
     public:
     Number();
@@ -95,16 +114,17 @@ public:
     char getCur();
     char lookAhead();
     void skipWhiteSpace();
+    bool is_eof();
 
-    uint parse();
-    uint parseObject(JsonObject&);
-    uint parseValue(JsonValue&);
-    uint parseString(String&);
-    uint parseEscape(String&);
-    uint parseNumber(Number&);
-    uint parseArray(Array&);
-    uint parseBoolean(bool&);
-    uint parseNull(JsonValue&);
+    JsonErr parse();
+    JsonErr parseObject(JsonObject&);
+    JsonErr parseValue(JsonValue&);
+    JsonErr parseString(String&);
+    JsonErr parseEscape(String&);
+    JsonErr parseNumber(Number&);
+    JsonErr parseArray(Array&);
+    JsonErr parseBoolean(bool&);
+    JsonErr parseNull(JsonValue&);
     
     JsonObject getRootObject(){
         return m_object;
